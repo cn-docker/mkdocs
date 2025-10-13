@@ -2,7 +2,7 @@ FROM ubuntu:24.04
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # renovate: datasource=ubuntu-package suite=noble depName=mkdocs
-ENV MKDOCS_VERSION="1.1.2+dfsg-2ubuntu1"
+ENV MKDOCS_VERSION="1.4.2+dfsg-2"
 
 RUN apt-get update -y && \
     apt-get install -y git mkdocs=${MKDOCS_VERSION} && \
