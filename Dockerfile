@@ -1,9 +1,11 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
-# Install Git, Subversion, Mercurial
+# renovate: datasource=ubuntu-package suite=noble depName=mkdocs
+ENV MKDOCS_VERSION="1.1.2+dfsg-2ubuntu1"
+
 RUN apt-get update -y && \
-    apt-get install -y mkdocs=1.1.2+dfsg-2ubuntu1 && \
+    apt-get install -y git mkdocs=${MKDOCS_VERSION} && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
